@@ -64,6 +64,8 @@ def getWeatherData():
     dewPoint = data["values"]["dewPoint"]
     windSpeed = data["values"]["windSpeed"]
     windDirection = data["values"]["windDirection"]
+    if windDirection == "null":
+      windDirection=0
     precipIntensity = data["values"]["precipitationIntensity"]
   except:
     print("Data Retrieval from Tomorrow.io failed.")
